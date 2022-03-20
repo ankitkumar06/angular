@@ -1,0 +1,55 @@
+
+<body>
+<div class="loader" *ngIf="dataLoading"></div>
+<div class="alert alert.danger" role="alert" *ngIf="error">
+    an error occured here is the error: {{errMassege}} 
+</div>
+<!-- <ng-template #showform> -->
+<div id=”registration” style="align-items: center; justify-content: center; width: 50%; padding-left: 25%;">
+    <form #rform= "ngForm" (ngSubmit)="getValue(rform.value)" style="align-items: center; justify-content:center;" >
+       
+    <label>Full Name </label>
+    <input type ="text" ngModel name="name" /><br><br>
+    <input type="file" style="border: 1px solid black;" ngModel id="img" name="img" accept="image/*"><br><br>
+    
+        <h3>BrandDetails</h3>
+        
+        brandname: <input type ="text" ngModel name="brandname" /><br><br>
+       
+    About_me_slogan: <input type ="about" ngModel name="about" /><br><br>
+    
+   Bio: <input type ="message" ngModel name="bio" /><br><br>
+    
+    Email: <input type ="email" ngModel name="email" /><br><br>
+      
+       Birthday:  <input type="date" ngModel name="date"><br><br>
+    
+    
+        <h3>Gender</h3>
+        <input type="radio" id="male" ngModel name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" ngModel name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" ngModel name="gender" value="other">
+  <label for="other">Other</label>
+   
+        <h3>Address:</h3>
+       Street: <input type="text" ngModel name ="street"><br><br>
+       PostalCode <input type="number" ngModel name ="postalcode"><br><br>
+       City: <input type="text" ngModel name ="city"><br><br>
+      
+      CountryCode: <select ngModel name="countrycode" id="country" style="width: 200px;height: 30px; border-radius: 7px; box-shadow: 1px 3px 0px rgb(139, 160, 168);" >
+        <option value="IND">IND</option>
+        <option  value="PAK">PAK</option>
+        <option  value="USA">USA</option>
+        <option  value="UK">UK</option>
+      </select>
+      <br><br> 
+       County: <input type="text" ngModel name ="country"><br><br>
+       Text: <input type="message" ngModel name ="text"><br><br>
+       
+    <button style="width: 100px; height: 40px; margin-left: 130px;">Registration</button>
+    </form>
+    </div>
+    </body>
+<!-- </ng-template> -->
